@@ -1,5 +1,8 @@
 ---
 title:  "[gitblog] 댓글 기능 구현하기"
+categories: Gitblog
+tag: [gitblog]
+toc: true
 ---
 # 개요
 

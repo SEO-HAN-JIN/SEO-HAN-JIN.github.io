@@ -1,5 +1,8 @@
 ---
 title : "[Java] 기본형과 참조형"
+categories: Java
+tag: [java]
+toc: true
 ---
 # 개요
 

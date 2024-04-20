@@ -1,5 +1,8 @@
 ---
 title: "[Java] 변수와 초기화"
+categories: Java
+tag: [java]
+toc: true
 ---
 # 개요
 

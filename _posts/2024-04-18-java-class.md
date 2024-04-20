@@ -1,5 +1,8 @@
 ---
 title : "[Java]클래스가 필요한 이유와 도입"
+categories: Java
+tag: [java]
+toc: true
 ---
 # 개요
 
