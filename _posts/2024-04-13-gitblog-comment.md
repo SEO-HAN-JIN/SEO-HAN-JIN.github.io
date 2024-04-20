@@ -3,6 +3,9 @@ title:  "[gitblog] 댓글 기능 구현하기"
 categories: Gitblog
 tag: [gitblog]
 toc: true
+author_profile: false
+# sidebar:
+#     nav: "docs"
 ---
 # 개요
 
@@ -16,37 +19,37 @@ jekyll에서는 댓글기능을 굉장히 다양하게 지원을 해주고 있�
 
 프로필에 들어간 후 설정에서 'Add Disqus To Site'를 클릭한다.
 
-![1](../images/2024-04-13-gitblog-comment/1.png)
+![1](../../images/2024-04-13-gitblog-comment/1.png)
 
-![1712995113252](../images/2024-04-13-gitblog-comment/2.png)
+![2](../../images/2024-04-13-gitblog-comment/2.png)
 
 Get Started를 클릭 후 'I want to install Disqus on my site'를 클릭한다.
 
-![1712995237737](../images/2024-04-13-gitblog-comment/3.png)
+![3](../../images/2024-04-13-gitblog-comment/3.png)
 
 Website Name, Category, Language를 입력 후 'Create Site'버튼을 클릭한다. 그 후 아래 사진과 같이 무료 버전을 선택 후 플랫폼을 고르라는 화면에서 'Jekyll'을 선택한다.
 
-![1712995482607](../images/2024-04-13-gitblog-comment/4.png)
+![4](../../images/2024-04-13-gitblog-comment/4.png)
 
-Jekyll install instructions 화면에서 'Configure'버튼을 클릭하면 아래와 같이 화면이 나오는데 Website URL에서 깃허브 블로그 URL을 입력 후 'Next'버튼을 클릭하여 세팅을 완료한다.![1712995713984](../images/2024-04-13-gitblog-comment/5.png)
+Jekyll install instructions 화면에서 'Configure'버튼을 클릭하면 아래와 같이 화면이 나오는데 Website URL에서 깃허브 블로그 URL을 입력 후 'Next'버튼을 클릭하여 세팅을 완료한다.![5](../../images/2024-04-13-gitblog-comment/5.png)
 
 # _config.yml 파일 수정
 
 _confgi.yml 파일에서 `comments: true` 로 수정해준다.
 
-![1712995948099](../images/2024-04-13-gitblog-comment/6.png)
+![6](../../images/2024-04-13-gitblog-comment/6.png)
 
 comments의 provider는 'disqus'로 변경해주고, shortname도 변경해준다. shortname은 Disqus에서 만들었던 site에서 'Edit Setting'을 클릭하면 관련한 정보가 나온다.
 
-![1712996072709](../images/2024-04-13-gitblog-comment/7.png)
+![7](../../images/2024-04-13-gitblog-comment/7.png)
 
-![1712996269427](../images/2024-04-13-gitblog-comment/8.png)
+![8](../../images/2024-04-13-gitblog-comment/8.png)
 
 # 배포하기
 
 댓글기능이 되는지 확인하기 위해서는 배포를해야한다. 수정한 파일들을 github에 push를 하면 댓글기능이 활성화 된 것을 확인 할 수 있다.
 
-![1712996365953](../images/2024-04-13-gitblog-comment/9.png)
+![9](../../images/2024-04-13-gitblog-comment/9.png)
 
 # 시행착오
 
