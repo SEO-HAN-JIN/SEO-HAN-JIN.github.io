@@ -1,5 +1,5 @@
 ---
-title: "[Gitblog] 예제 "
+title: "[gitblog] 예제 "
 categories: Gitblog
 tag: [gitblog]
 toc: true
