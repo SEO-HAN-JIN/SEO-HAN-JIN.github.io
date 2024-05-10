@@ -8,6 +8,9 @@ author_profile: false
 #     nav: "docs"
 # search: false # 검색을 원하지 않을 때
 ---
+
+&nbsp;
+
 # 개요
 
 자바에서 접근제어자를 알아보자.
@@ -88,8 +91,6 @@ Process finished with exit code 0
 
 우리는 접근제어자를 이용하여 이러한 비정상적인 동작은 방지할 수 있다.
 
-&nbsp;
-
 ## 코드 변경
 
 `Speaker`클래스에서 `volume`필드의 접근제어자를 `private`으로 변경해보자.
@@ -132,8 +133,6 @@ public class Speaker {
 # 실습
 
 실습 코드를 통해 접근 제어자를 알아보자.
-
-&nbsp;
 
 ## 같은 패키지
 
@@ -200,8 +199,6 @@ public class AccessInnerMain {
 
 같은 패키지 안에 있기 때문에 `public`, `default`는 호출이 가능했지만, `private`은 호출이 불가능 했다.
 
-&nbsp;
-
 ## 다른 패키지
 
 위의 코드와 다른 패키지에 클래스를 만들어 확인해보자.
@@ -245,8 +242,6 @@ public class AccessOuterMain {
   - 하나의 자바 파일에 `public`클래스는 하나만 등장할 수 있다.
   - 하나의 자바 파일에 `default` 접근 제어자를 사용하는 클래스는 무한정 만들 수 있다.
 
-&nbsp;
-
 ## 같은 패키지
 
 같은 패키지 안에서 클래스는 모두 접근이 가능하다.
@@ -283,7 +278,7 @@ public class PublicClassInnerMain {
     }
 }
 ```
-&nbsp;
+
 ## 다른 패키지
 
 다른 패키지의 클래스는 `public`외에 접근이 불가능.
