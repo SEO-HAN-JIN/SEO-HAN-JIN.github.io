@@ -11,6 +11,7 @@ author_profile: false
 # 개요
 
 자바에서 접근제어자를 알아보자.
+&nbsp;
 
 # ❓ 접근제어자가 필요한이유
 
@@ -85,8 +86,7 @@ Process finished with exit code 0
 결과는 200으로 변경되어 의도와 달리 코드가 동작하였다.
 
 우리는 접근제어자를 이용하여 이러한 비정상적인 동작은 방지할 수 있다.
-
-
+&nbsp;
 ## 코드 변경
 
 `Speaker`클래스에서 `volume`필드의 접근제어자를 `private`으로 변경해보자.
@@ -100,8 +100,7 @@ public class Speaker {
 ```
 
 이렇게 변경하면 `SpeakerMain`클래스에서 `Speaker`클래스의 필드에 직접 접근을 할 수 없다.
-
-
+&nbsp;
 # 접근 제어자의 종류
 
 ### 접근 제어자 종류
@@ -123,12 +122,12 @@ public class Speaker {
 
 접근 제어자는 필드와 메서드, 생성자에 사용될 수 있다. 추가로 클래스 레벨에도 일부 접근 제어자를 사용할 수 있다.
 
+&nbsp;
 
 # 실습
 
 실습 코드를 통해 접근 제어자를 알아보자.
-
-
+&nbsp;
 ## 같은 패키지
 
 아래 2개의 클래스(`AccessData`, `AccessDataMain`)는 같은 패키지 안에 있다.
@@ -193,7 +192,7 @@ public class AccessInnerMain {
 ```
 
 같은 패키지 안에 있기 때문에 `public`, `default`는 호출이 가능했지만, `private`은 호출이 불가능 했다.
-
+&nbsp;
 ## 다른 패키지
 
 위의 코드와 다른 패키지에 클래스를 만들어 확인해보자.
@@ -226,8 +225,7 @@ public class AccessOuterMain {
 같은 패키지와 달리 `default`도 호출이 불가능해 졌다.
 
 `innerAccess`메서드 같은 경우 해당 메서드의 접근제어자는 `public`이고, 이 메서드는 내부 호출하여 자기 자신에게 접근하는 것이기 때문에 모든 곳에 접근이 가능하다.
-
-
+&nbsp;
 # 클래스 레벨 접근 제어자
 
 - 클래스 레벨의 접근 제어자는 `public`, `default`만 사용할 수 있다.
@@ -235,7 +233,7 @@ public class AccessOuterMain {
 - `public`클래스는 반드시 파일명과 이름이 같아야 한다.
   - 하나의 자바 파일에 `public`클래스는 하나만 등장할 수 있다.
   - 하나의 자바 파일에 `default` 접근 제어자를 사용하는 클래스는 무한정 만들 수 있다.
-
+&nbsp;
 ## 같은 패키지
 
 같은 패키지 안에서 클래스는 모두 접근이 가능하다.
@@ -272,7 +270,7 @@ public class PublicClassInnerMain {
     }
 }
 ```
-
+&nbsp;
 ## 다른 패키지
 
 다른 패키지의 클래스는 `public`외에 접근이 불가능.
