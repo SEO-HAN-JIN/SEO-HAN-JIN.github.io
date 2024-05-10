@@ -9,13 +9,13 @@ author_profile: false
 # search: false # 검색을 원하지 않을 때
 ---
 
-  
+&nbsp;
 
 # 개요
 
 자바에서 접근제어자를 알아보자.
 
-  
+&nbsp;
 
 # ❓ 접근제어자가 필요한이유
 
