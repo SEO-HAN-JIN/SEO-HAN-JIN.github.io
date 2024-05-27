@@ -129,4 +129,143 @@ public class FinalFieldMain {
 }
 ```
 
-![1716394035842](image/2024-05-23-java-final/1716394035842.png)
+![1716394035842]({{site.url}}/images/2024-05-23-java-final/1716394035842.png)
+
+&nbsp;
+
+# 상수
+
+상수는 변하지 않고, 항상 일정한 값을 갖는 수를 말한다. 자바에서는 보통 단 하나만 존재하는 변하지 않는 고정된 값을 상수라 한다. 이렇나 이유로 상수는 `static final`키워드를 사용한다.
+
+## 자바 상수 특징
+
+- `static final`키워드를 사용한다.
+- 대문자를 사용하고 구분은 `_`(언더스코어)라 한다. (관례)
+  - 일반적인 변수와 상수를 구분하기 위해
+- 필드를 직접 접근해서 사용한다.
+  - 상수는 기능이 아니라 고정된 값 자체를 사용하는 것이 목적이다.
+  - 상수는 값을 변경할 수 없다. 따라서 필드에 직접 접근해도 데이터가 변하는 문제가 발생하지 않는다.
+
+```java
+public class Constant {
+    // 수학 상수
+    public static final double PI = 3.14;
+
+    // 시간 상수
+    public static final int HOURS_IN_DAYS = 24;
+    public static final int MINUTES_IN_HOURS = 60;
+    public static final int SECONDS_IN_MINUTES = 60;
+
+    // 애플리케이션 설정 상수
+    public static final int MAX_USERS = 1000;
+}
+```
+
+- 애플리케이션 안에는 다양한 상수가 존재할 수 있다. 수학, 시간 등등 실생활에서 사용하는 상수부터, 애플리케이션의 다양한 설정을 위한 상수들도 있다.
+- 보통 이런 상수들은 애플리케이션 전반에서 사용되기 때문에 public 를 자주 사용한다. 물론 특정 위치에서만 사용된다면 다른 접근 제어자를 사용하면 된다.
+- 상수는 중앙에서 값을 하나로 관리할 수 있다는 장점도 있다.
+- 상수는 런타임에 변경할 수 없다. 상수를 변경하려면 프로그램을 종료하고, 코드를 변경한 다음에 프로그램을 다시 실행해야 한다.
+
+## 예제
+
+```java
+public class ConstantMain1 {
+    public static void main(String[] args) {
+        System.out.println("프로그램 최대 참여자 수 : " + 1000);
+        int currentUserCount = 999;
+        process(currentUserCount++);
+        process(currentUserCount++);
+        process(currentUserCount++);
+    }
+
+    private static void process(int currentUserCount) {
+        System.out.println("참여자 수 :" + currentUserCount);
+        if (currentUserCount > 1000) {
+            System.out.println("대기자로 등록합니다.");
+        } else {
+            System.out.println("게임에 참여합니다.");
+        }
+    }
+}
+```
+
+**결과**
+
+```java
+프로그램 최대 참여자 수 : 1000
+참여자 수 :999
+게임에 참여합니다.
+참여자 수 :1000
+게임에 참여합니다.
+참여자 수 :1001
+대기자로 등록합니다.
+
+Process finished with exit code 0
+
+```
+
+이 예제에서는 문제가 몇가지 있다. 첫번째로 `프로그램 최대 참여자 수` 가 1000명이 아니라 2000명으로 바꿔야 한다면 수정해야하는 부분이 많아진다. 두번째로는 개발자 입장에서는 숫자 1000을 보고 이게 무엇을 의미하는지 파악하기 힘들다는 것이다.
+
+### 개선
+
+```java
+public class ConstantMain1 {
+    public static void main(String[] args) {
+        System.out.println("프로그램 최대 참여자 수 : " + Constant.MAX_USERS);
+        int currentUserCount = 999;
+        process(currentUserCount++);
+        process(currentUserCount++);
+        process(currentUserCount++);
+    }
+
+    private static void process(int currentUserCount) {
+        System.out.println("참여자 수 :" + currentUserCount);
+        if (currentUserCount > Constant.MAX_USERS) {
+            System.out.println("대기자로 등록합니다.");
+        } else {
+            System.out.println("게임에 참여합니다.");
+        }
+    }
+}
+```
+
+1000을 `Constant.MAX_USERS`로 변경하는 것이다. 이렇게 하면 상수가 중앙에서 일관되게 관리할 수 있다는 장점이 있다.
+
+&nbsp;
+
+# 변수와 참조
+
+`final`로 선언한 변수와 참조 대상의 값을 확인해보자.
+
+## 예제
+
+```java
+public class Data {
+    public int value;
+}
+
+```
+
+`final`이 아닌 일반 변수가 있는 클래스가 있다.
+
+```java
+public class FinalRefMain {
+    public static void main(String[] args) {
+        final Data data = new Data();
+//        data = new Data();    // 에러!! 참조값을 더 이상 바꿀 수 없음
+
+        // 참조 대상의 값은 변경 가능
+        data.value = 10;
+        System.out.println(data.value);
+        data.value = 20;
+        System.out.println(data.value);
+    }
+}
+```
+
+`final`을 이용해서 참조형 변수 `Data`를 선언했다. `final`로 선언했기 때문에 한번만 선언이 가능하며 더 이상 선언하려고 하면 컴파일 에러가 발생한다. 하지만 참조대상의 값은 변경이 가능하다. 
+
+- 참조형 변수 `data`에 `final`이 붙었다. 이 경우 참조형 변수에 들어있는 참조값을 다른 값으로 변경하지 못한다. 쉽게 이야기해서 이제 다른 객체를 참조할 수 없다. 그런데 이것의 정확한 뜻을 잘 이해해야 한다. 참조형 변수에 들어있는 참조값만 변경하지 못한다는 뜻이다. 이 변수 이외에 다른 곳에 영향을 주는 것이 아니다.
+- `Data.value`는 `final`이 아니다. 따라서 값을 변경할 수 있다.
+
+즉, 참조형 변수 `final`이 붙으면 참조 대상 자체를 다른 대상으로 변경하지 못하는 것이지, 참조하는 대상의 값은 변경할 수 있다.
