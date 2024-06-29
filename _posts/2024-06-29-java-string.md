@@ -242,7 +242,7 @@ Process finished with exit code 0
 
 문자열 풀에 있는 `String` 인스턴스의 값이 중간에 변경되면 같은 문자열을 참고하는 다른 변수의 값도 함께 변경된다.
 
-![1719673823237](https://file+.vscode-resource.vscode-cdn.net/c%3A/gitblog/SEO-HAN-JIN.github.io/_posts/{{site.url}}/images/2024-06-29-java-string/1719673823237.png)
+![1719673823237]({{site.url}}/images/2024-06-29-java-string/1719673823237.png)
 
 예를들어
 
