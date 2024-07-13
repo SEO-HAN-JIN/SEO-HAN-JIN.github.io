@@ -18,16 +18,15 @@ author_profile: false
 
 # 래퍼 클래스
 
-# 기본형의 한계
+## 기본형의 한계
 
 자바는 객체지향 언어이다. 그런데 객체가 아닌 것이 있다. 바로 `int`, `double` 같은 기본형(Primitive Type) 이다.
 
 - **객체가 아님** : 기본형 데이터는 객체가 아니기 때문에, 객체 지향 프로그래밍의 장점인 유용한 메서드(`compareTo`) 등의 기능을 제공할 수 없다.
 - **null 값을 가질 수 없음** : 기본형 데이터 타입은 `null` 값을 가질 수 없다. 때로는 데이터가 `없음` 이라는 상태를 나타내야 할 필요가 있는데, 기본형은 항상 값을 가지기 때문에 이런 표현을 할 수 없다.
 
-&nbsp;
 
-# 자바 래퍼 클래스
+## 자바 래퍼 클래스
 
 자바는 기본형에 대응하는 래퍼 클래스를 기본으로 제공한다.
 
@@ -94,9 +93,8 @@ Process finished with exit code 0
 - `Integer newInteger = Integer.valueOf(10)` : 기본형에서 래퍼클래스로 변경 시 `Integer.valueOf()`를 사용, 스트링 풀 처럼 자주 사용하는 -128 ~ 127 사이의 숫자 값을 재사용한다. 불변
 - `int intValue = IntegerObj.intValue();` : 래퍼클래스에서 기본형으로 변경 시 `.intValue()`사용
 
-&nbsp;
 
-# 박싱, 언박싱
+## 박싱, 언박싱
 
 **래퍼 클래스 생성 - 박싱(Boxing)**
 
@@ -116,9 +114,7 @@ Process finished with exit code 0
 - 래퍼 클래스는 객체이기 때문에 `==`비교를 하면 인스턴스의 참조값을 비교한다.
 - 래퍼 클래스는 내부의 값을 비교하도록 `equals()`를 재정의해두었다. 따라서 값을 비교하려면 `equals()`를 사용해야 한다.
 
-&nbsp;
-
-# 오토 박싱, 오토 언박싱
+## 오토 박싱, 오토 언박싱
 
 - 박싱 : `valueOf()`
 - 언박싱 : `xxxValue()` (ex `intValue()`, `doubleValue()`)
@@ -149,11 +145,9 @@ unboxedValue = 7
 Process finished with exit code 0
 ```
 
-&nbsp;
+## 주요 메서드와 성능
 
-# 주요 메서드와 성능
-
-## 1. 메서드
+### 1. 메서드
 
 ```java
 public class WrapperUtilsMain {
@@ -199,7 +193,7 @@ Process finished with exit code 0
 - `valueOf("10")` : 래퍼 타입을 반환한다.
 - `parseInt("10")` : 기본형을 반환한다.
 
-## 2. 성능
+### 2. 성능
 
 ```java
 public class WrapperVsPrimitive {
