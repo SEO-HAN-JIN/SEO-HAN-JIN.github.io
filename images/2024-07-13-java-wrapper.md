@@ -1,5 +1,5 @@
 ---
-title : "[Java] 래퍼, Class 클래스"
+title : "[Java] 래퍼 클래스"
 categories: Java
 tag: [java]
 toc: true
@@ -190,7 +190,7 @@ Process finished with exit code 0
 - `valueOf()` : 래퍼 타입을 반환한다. 숫자, 문자열 모두 지원한다.
 - `parseInt()` : 문자열을 기본형으로 제공한다.
 - `compareTo()` : 내 값과 인수로 넘어온 값을 비교한다. 내 값이 크면 `1`, 같으면 `0`, 내 값이 작으면 `-1` 을 반환한다.
-- `Integer.sum()`, `Integer.min()`, `Integer.max()`, : `static` 메서드이다. 
+- `Integer.sum()`, `Integer.min()`, `Integer.max()`, : `static` 메서드이다.
 
 &nbsp;
 
